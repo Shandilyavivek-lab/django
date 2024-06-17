@@ -47,7 +47,7 @@ jobs:
     needs: build
     environment:
       name: 'staging'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: 'http://djangoslotsgit-staging.azurewebsites.net/'
 
     steps:
       - name: Download artifact from build job
@@ -57,6 +57,17 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
+
+      - name: Set up Python version
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m venv antenv
+          source antenv/bin/activate
+          pip install -r requirements.txt
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
