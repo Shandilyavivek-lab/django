@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v&ms)!&u&m8$#syv2fd&$hc)l8a^^dqb%$p#k+sf7(!^rw@+fz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangoslotsgit.azurewebsites.net']
+ALLOWED_HOSTS = ['djangoslotsgit.azurewebsites.net','djangoslotsgit-staging.azurewebsites.net']
 
 
 # Application definition
