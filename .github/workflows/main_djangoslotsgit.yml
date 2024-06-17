@@ -63,5 +63,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'djangoslotsgit'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_121C89AE2B844CA5BBF3AF0A0C902364 }}
+          slot-name: 'staging'
+          publish-profile: ${{ secrets.STAGING_SLOT }}
